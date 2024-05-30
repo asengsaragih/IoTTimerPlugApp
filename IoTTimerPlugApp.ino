@@ -160,6 +160,9 @@ void startTimer() {
   //start relay
   digitalWrite(RELAY, HIGH);
 
+  //set lcd not backlight
+  lcd.noBacklight();
+
   if (second == 0) {
     second = 59;
 
@@ -185,6 +188,9 @@ void stopTimer() {
 
   //start relay
   digitalWrite(RELAY, LOW);
+
+  //set lcd backlight
+  lcd.backlight();
 
   updateTime();
   turnBuzzer(3, 50);
